@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<block>
+  <name>delta_r</name>
+  <key>delta_r_delta_r</key>
+  <category>compensation</category>
+  <import>import gnuradio.delta_r</import>
+  <make> gnuradio.delta_r.delta_r($_regl)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>load_res</name>
+    <key>_regl</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <!--<sink>
+    <name>in</name>
+    <type></type>
+  </sink>-->
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>delta_r</name>
+    <type>float</type>
+  </source>
+</block>
